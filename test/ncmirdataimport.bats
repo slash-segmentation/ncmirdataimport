@@ -192,7 +192,8 @@ skipIfKeplerNotInPath() {
   run cat "$THE_TMP/$WORKFLOW_STATUS"
   [ "$status" -eq 0 ]
   [ "${lines[3]}" == "phase=Done" ]
-
+  [[ "${lines[8]}" == "estimated.total.diskspace="* ]]
+  [ "${lines[9]}" == "estimated.total.diskspace.help=Number of bytes that will be copied to job from remote resource" ]
   run grep "Rsync Try #2" "$THE_TMP/$README_TXT"
   [ "$status" -eq 0 ]
   
