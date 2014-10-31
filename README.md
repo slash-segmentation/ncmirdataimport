@@ -7,8 +7,8 @@ ncmirdataimport
 Repository for NCMIR Data Import workflow which imports data from
 NCMIR storage
 
-The workflow resides in src/ and the unit tests for the workflow
-are located in test/
+The workflow resides in **src/** and the unit tests for the workflow
+are located in **test/**
 
 Requirements
 ============
@@ -18,12 +18,12 @@ Requires [Kepler 2.4 or higher][1] updated with latest modules
 Building
 ========
 
-None required, simply load src/ncmirdataimport.kar via [Kepler][1]
+None required, simply load **src/ncmirdataimport.kar** via [Kepler][1]
 
 Testing
 =======
 
-cd into test/ and view [README][2] for information
+**cd** into **test/** and view [README][2] for information
 on how to test the workflow
 
 Copyright
