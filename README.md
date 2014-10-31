@@ -1,5 +1,5 @@
 [1]: https://kepler-project.org/
-[2]: /slashsegmentation/test/README.md
+[2]: test/README.md
 
 ncmirdataimport
 ===============
