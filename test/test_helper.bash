@@ -31,3 +31,14 @@ skipIfKeplerNotInPath() {
 
 }
 
+#
+# Simple function to print all values passed in via echo command
+# invoke like so: echoArray "${lines[@]}"
+#
+echoArray() {
+  
+  localArr=("$@")
+  for Y in ${localArr[@]}; do
+    echo $Y
+  done
+}
