@@ -16,7 +16,7 @@ load test_helper
   echo "1,,," >> "$THE_TMP/bin/command.tasks"
   echo "0,mkdirout,,," >> "$THE_TMP/bin/command.tasks"
   echo "1,,rsync error," >> "$THE_TMP/bin/command.tasks"
-  echo "0,,rsync error2,echo" >> "$THE_TMP/bin/command.tasks"
+  echo "0,,rsync error2,echo RSYNC_UNIT_TEST" >> "$THE_TMP/bin/command.tasks"
   echo "0,30000 $THE_TMP/data,," >> "$THE_TMP/bin/command.tasks"
 
   # Run kepler.sh
@@ -44,6 +44,11 @@ load test_helper
 
   # Verify we got a README.txt
   [ -s "$THE_TMP/$README_TXT" ]
+
+  # Verify arguments are correct for rsync
+  run egrep "RSYNC_UNIT_TEST" "$THE_TMP/$README_TXT"
+  [ "$status" -eq 0 ] 
+  [ "${lines[0]}" == "RSYNC_UNIT_TEST war.crbs.ucsd.edu:/foo $THE_TMP/data" ]
   
   [ -s "$THE_TMP/$WORKFLOW_STATUS" ] 
   
