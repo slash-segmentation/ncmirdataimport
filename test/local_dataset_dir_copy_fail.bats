@@ -45,7 +45,7 @@ load test_helper
   run cat "$THE_TMP/$WORKFLOW_FAILED_TXT"
   [ "$status" -eq 0 ]
   [ "${lines[0]}" == "simple.error.message=Unable to copy data" ]
-  [ "${lines[1]}" == "detailed.error.message=Nonzero exit code (1) from $THE_TMP/bin/command -Lr $THE_TMP/foo $THE_TMP/data : error" ]
+  [ "${lines[1]}" == "detailed.error.message=Nonzero exit code (1) from $THE_TMP/bin/command -Lr '$THE_TMP/foo' '$THE_TMP/data' : error" ]
   
   [ -s "$THE_TMP/$WORKFLOW_STATUS" ] 
   

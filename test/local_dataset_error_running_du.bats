@@ -44,7 +44,7 @@ load test_helper
   run cat "$THE_TMP/$WORKFLOW_FAILED_TXT"
   [ "$status" -eq 0 ]
   [ "${lines[0]}" == "simple.error.message=Unable to get size of data to be imported" ]
-  [[ "${lines[1]}" == "detailed.error.message=Nonzero exit code (1) from $THE_TMP/bin/command $THE_TMP/foo -Lbs : "* ]]
+  [[ "${lines[1]}" == "detailed.error.message=Nonzero exit code (1) from $THE_TMP/bin/command '$THE_TMP/foo' -Lbs : "* ]]
   
   [ -s "$THE_TMP/$WORKFLOW_STATUS" ] 
   
