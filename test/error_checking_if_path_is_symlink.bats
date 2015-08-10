@@ -14,7 +14,7 @@ load test_helper
   echo "1,stdout,error," > "$THE_TMP/bin/command.tasks"
 
   # Run kepler.sh
-  run $KEPLER_SH -runwf -redirectgui $THE_TMP -CWS_jobname jname -CWS_user joe -CWS_jobid 123 -remotePath /foo -CWS_outputdir $THE_TMP -maxRetry 2 -sleepCmd /bin/true -sshCmd "$THE_TMP/bin/command" $WF
+  run $KEPLER_SH -runwf -redirectgui $THE_TMP -CWS_jobname jname -CWS_user joe -CWS_jobid 123 -remotePath /foo -CWS_outputdir $THE_TMP -maxRetry 2 -sleepCmd /bin/true -remoteHost war.crbs.ucsd.edu -sshCmd "$THE_TMP/bin/command" $WF
 
   # Check exit code
   [ "$status" -eq 0 ]

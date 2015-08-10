@@ -22,7 +22,7 @@ load test_helper
   echo "0,40000 $THE_TMP/data,," >> "$THE_TMP/bin/command.tasks"
 
   # Run kepler.sh
-  run $KEPLER_SH -runwf -redirectgui $THE_TMP -CWS_jobname jname -CWS_user joe -CWS_jobid 123 -remotePath /foo -CWS_outputdir $THE_TMP -maxRetry 2 -sleepCmd /bin/true -sshCmd "$THE_TMP/bin/command" -duCmd "$THE_TMP/bin/command" -rsyncCmd "$THE_TMP/bin/command" -mkdirCmd "$THE_TMP/bin/command" $WF
+  run $KEPLER_SH -runwf -redirectgui $THE_TMP -CWS_jobname jname -CWS_user joe -CWS_jobid 123 -remotePath /foo -CWS_outputdir $THE_TMP -maxRetry 2 -sleepCmd /bin/true -sshCmd "$THE_TMP/bin/command" -duCmd "$THE_TMP/bin/command" -rsyncCmd "$THE_TMP/bin/command" -remoteHost war.crbs.ucsd.edu -mkdirCmd "$THE_TMP/bin/command" $WF
 
   # Check exit code
   [ "$status" -eq 0 ]
