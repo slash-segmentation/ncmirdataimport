@@ -47,12 +47,12 @@ load test_helper
 
   run cat "$THE_TMP/$README_TXT" ]
 
-  [ "${lines[6]}" == "Remote Host: nbcrsi@si2015.crbs.ucsd.edu" ]
+  [ "${lines[6]}" == "Remote Host: war.crbs.ucsd.edu" ]
 
   # Verify arguments are correct for rsync
   run egrep "RSYNC_UNIT_TEST" "$THE_TMP/$README_TXT"
   [ "$status" -eq 0 ] 
-  [ "${lines[0]}" == "RSYNC_UNIT_TEST nbcrsi@si2015.crbs.ucsd.edu:/foo $THE_TMP/data" ]
+  [ "${lines[0]}" == "RSYNC_UNIT_TEST war.crbs.ucsd.edu:/foo $THE_TMP/data" ]
   
   [ -s "$THE_TMP/$WORKFLOW_STATUS" ] 
   
@@ -76,7 +76,7 @@ load test_helper
 
   run egrep "^estimated.total.diskspace.help=" "$THE_TMP/$WORKFLOW_STATUS"
   [ "$status" -eq 0 ]
-  [ "${lines[0]}" == "estimated.total.diskspace.help=Number of bytes that will be copied to job from nbcrsi@si2015.crbs.ucsd.edu" ]
+  [ "${lines[0]}" == "estimated.total.diskspace.help=Number of bytes that will be copied to job from war.crbs.ucsd.edu" ]
 
   run egrep "^disk.space.consumed=" "$THE_TMP/$WORKFLOW_STATUS"
   [ "$status" -eq 0 ]
