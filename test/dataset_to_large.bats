@@ -11,7 +11,7 @@ load test_helper
   skipIfKeplerNotInPath
 
   echo "0,/foo,," > "$THE_TMP/bin/command.tasks"
-  echo "0,200000000001 /foo,error," >> "$THE_TMP/bin/command.tasks"
+  echo "0,800000000001 /foo,error," >> "$THE_TMP/bin/command.tasks"
 
   # Run kepler.sh
   run $KEPLER_SH -runwf -redirectgui $THE_TMP -CWS_jobname jname -CWS_user joe -CWS_jobid 123 -remotePath /foo -CWS_outputdir $THE_TMP -maxRetry 2 -sleepCmd /bin/true -sshCmd "$THE_TMP/bin/command" -duCmd "$THE_TMP/bin/command" -mkdirCmd "$THE_TMP/bin/command" $WF
@@ -43,7 +43,7 @@ load test_helper
   run cat "$THE_TMP/$WORKFLOW_FAILED_TXT"
   [ "$status" -eq 0 ]
   [ "${lines[0]}" == "simple.error.message=Data is too large to transfer" ]
-  [ "${lines[1]}" == "detailed.error.message=Dataset size 200000000001 bytes exceeds threshold of 200000000000 bytes" ]
+  [ "${lines[1]}" == "detailed.error.message=Dataset size 800000000001 bytes exceeds threshold of 800000000000 bytes" ]
   
   [ -s "$THE_TMP/$WORKFLOW_STATUS" ] 
   

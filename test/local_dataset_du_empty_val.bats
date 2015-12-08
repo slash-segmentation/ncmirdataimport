@@ -5,7 +5,7 @@ load test_helper
 #
 # Test
 #
-@test "Test case where local dataset is too large" {
+@test "Test case where no size returned from du command" {
 
   # verify $KEPLER_SH is in path if not skip this test
   skipIfKeplerNotInPath
